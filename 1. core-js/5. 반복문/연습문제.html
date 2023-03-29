@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Math.random(): 0.0이상 1.0미만의 랜덤값.
+        // Math.floor(): 내림, Math.ceil(): 올림, Math.round();
+
+        while (true) {
+            var rn1 = Math.floor((Math.random() * 21) + 1);
+            var rn2 = Math.floor((Math.random() * 21) + 1);
+            var type = Math.floor((Math.random() * 4) + 1);
+
+            if(type==1){
+                var result= rn1+rn2;
+                var input = prompt(`${rn1}+${rn2}=???`);
+                if(result==input){
+                    alert('정답');
+                }
+                else if(input==='그만'){
+                    braak;
+                }
+                else{
+                    alert('오답');
+                }
+            }
+            else if(type==2){
+                var result= rn1-rn2;
+                var input = prompt(`${rn1}-${rn2}=???`);
+                if(result==input){
+                    alert('정답');
+                }
+                else if(input==='그만'){
+                    braak;
+                }
+                else{
+                    alert('오답');
+                }
+            
+            }
+            else{
+                var result= rn1*rn2;
+                var input = prompt(`${rn1}x${rn2}=???`);
+                if(result==input){
+                    alert('정답');
+                }
+                else if(input==='그만'){
+                    braak;
+                }
+                else{
+                    alert('오답');
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
