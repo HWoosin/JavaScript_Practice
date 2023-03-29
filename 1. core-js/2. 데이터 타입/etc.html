@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var logical =false;
+        logical = true;
+        // logical =True; (논리값 표현이 아님.)
+
+        //0은 false로, 0이 아닌 나머지 정수는 true로 해석 가능.
+        var apple = 0;
+        if(apple){
+            console.log('사과가 '+apple+' 개!');
+        }
+        else{
+            console.log('사과가 하나도 없다!')
+        }
+
+        //null
+        //값이 의도적으로 없다는 것을 명시할 때 사용하는 값.
+        var banana ='바나나';
+        banana = null;
+        console.log(typeof banana);
+
+        //undifined
+        //값을 할당 하지 않은 변수에 암묵적으로 할당되는 값.
+        var i;
+        console.log(i);
+    </script>
+</body>
+</html>
