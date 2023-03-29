@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // ==연산자는 암묵적으로 문자열 내부에 숫자가 있다면
+        // 자동으로 숫자타입으로 변환 후 비교.
+        // ===을 사용하면 타입까지 일치하는지 비교.
+        var a=5, b ='5';
+        console.log(a==b);
+        console.log(a===b); //일치비교 연산자, 타입까지 비교해준다.
+
+        console.log('=====================================');
+
+        //동등 비교는 결과 예측이 힘들기 때문에 조심해야한다.
+        console.log('0' == '');
+        console.log(0 == '');
+        console.log(0 == '0');
+        console.log(false == 'false');
+        console.log(false == '0');
+
+        //일치 비교에서는 NaN을 주의.
+        //NaN은 자신과 일치하지 않는 유일한 값.
+        console.log(NaN == NaN);
+
+        //문자열 비교
+        console.log('=====================================');
+        console.log('apple' == 'APPLE');
+
+        //문자열의 대소 비교는 유니코드 문자번호 기준.
+        //영어 대문자 < 영어 소문자 , 한글
+        //같은 문자일 경우 사전 등재 순서로 판단.
+        console.log('peach'<'zebra');
+        console.log('감자'<'고구마');
+        console.log('peach'<'Zebra');
+    </script>
+</body>
+</html>

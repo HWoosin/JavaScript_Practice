@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = 3;
+        console.log(27%5);
+        console.log(num **3);//ES7
+        console.log(Math.pow(num,3)); //ES7 이전.
+
+        console.log('=====================================');
+        
+        //단항 산술 연산자 ++, --
+        var x =3;
+        x++;
+        ++x;
+        x--;
+        //전위(prefix), 후위(postfix)연산
+        var a = 10, result;
+        result = a++; //선연산 후증감
+        console.log(`result: ${result}, a: ${a}`);
+
+        result = ++a; //선증감 후연산
+        console.log(`result: ${result}, a: ${a}`);
+
+    </script>
+    
+</body>
+</html>
