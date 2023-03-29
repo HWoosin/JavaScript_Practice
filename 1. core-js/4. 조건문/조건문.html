@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1 =1;
+        var num2 =2;
+
+        if(num1 > num2 || true) {
+            console.log(true);
+        }
+        else{
+            console.log(false);
+        }
+
+        var point = +prompt('점수를 입력 ');
+        alert('당신의 점수: '+point+'점');
+        if(point >=90){
+            if(point>=95){
+                alert('A+');
+            }
+            else{
+                alert('A');
+            }
+        }
+        else if(point >= 80){
+            alert('B');
+        }
+        else if(point >= 70){
+            alert('C');
+        }
+        else if(point >= 60){
+            alert('D');
+        }
+        else{
+            alert('F');
+
+        }
+    </script>
+    
+</body>
+</html>
