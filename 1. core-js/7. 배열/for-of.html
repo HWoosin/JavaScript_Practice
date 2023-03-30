@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var week=['월','화','수','목','금','토','일'];
+
+        //for-of는 배열의 값을 얻어낼 때 주로 사용.(객체에서는 사용X)
+        //자바의 for-Each문과 유사
+        for(var d of week){
+            console.log(`${d}요일 좋아~!`);
+        }
+
+        console.log('===================================');
+
+        //for-in은 배열이나 객체의 index 혹은 key값을 변수에 저장.
+        for(var d in week){ //인덱스를 뽑아낸다.
+            console.log(`${d}요일 좋아~!`);
+        }
+    </script>
+    
+</body>
+</html>

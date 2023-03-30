@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var foods = ['볶음밥','닭강정','피자'];
+        console.log(foods);
+        
+        //pop: 배열의 마지막 요소를 제거하고, 제거한 요소를 반환.
+        var lastElement = foods.pop();
+        console.log(lastElement);
+        console.log(foods);
+        
+        //push: 배열의 끝에 요소 추가.
+        foods.push('파스타');
+        foods.push('족발');
+        console.log(foods);
+
+        //shift: 배열의 맨 첫번째 요소 제거, 제거한 요소 반환
+        var firstElement = foods.shift();
+        console.log(firstElement);
+        console.log(foods);
+
+        //unshift: 배열의 맨 첫번째 위치에 요소 추가
+        foods.unshift('떡볶이');
+        console.log(foods);
+
+    </script>
+    
+</body>
+</html>

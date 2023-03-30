@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var foods =['떡볶이','어묵','김말이','닭꼬치'];
+
+        //indexOf(): 배열 요소의 인덱스를 알려줌.
+        //없는 값 전달 시 -1 리턴
+        var idx = foods.indexOf('어묵');
+        console.log('찾은 인덱스: '+idx);
+        var idx = foods.indexOf('순대');
+        console.log('찾은 인덱스: '+idx);
+
+        //includes(): 배열 요소의 존재 확인
+        var result = foods.includes('김말이');
+        console.log('탐색결과: '+result);
+
+        console.log('=============================');
+
+        //slice(): 배열을 잘라냄
+        var arr = [0,1,2,3,4,5,6,7,8,9];
+        var sliceArr = arr.slice(3, 7);
+        console.log(sliceArr);
+        
+        var copyArr =arr.slice(0); //원본 복사
+        console.log(copyArr);
+        
+        //reverse(): 배열을 역순으로 배치
+        copyArr.reverse();
+        console.log(copyArr);
+
+        //join(): 배열의 요소들을 연결한 문자열로 반환
+        var foodStr = foods.join();
+        console.log(foodStr);
+
+        console.log('=============================');
+        var arr1 =[10,20,30];
+        var arr2 =[100,300,500];
+
+        console.log(arr1 + arr2);
+
+        //concat(): 배열을 결합
+        var concateArr = arr1.concat(arr2);
+        console.log(concateArr);
+        
+    </script>
+</body>
+</html>

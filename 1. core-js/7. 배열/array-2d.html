@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //우리반 학생들 4과목 점수(국영수탐)
+        var kim = [67, 89, 92, 31];
+        var lee = [47, 59, 96, 41];
+        var park = [87, 79, 42, 91];
+
+        var ourStudentScore = [
+            [67, 89, 92, 32],
+            [100, 87, 55, 67],
+            [23, 44, 100, 22]
+        ];
+        console.log(ourStudentScore);
+        console.log(ourStudentScore[1]); //array
+        console.log(ourStudentScore[0][2]);
+
+        //반 평균 구하기
+        var sumavg = 0;
+        var totalavg = 0;
+        for (var i = 0; i < 3; i++) {
+            var total = 0;
+            var avg = 0;
+            for (var j = 0; j < 4; j++) {
+                total += ourStudentScore[i][j];
+            }
+            avg = total / 4;
+            sumavg += avg
+        }
+        totalavg = sumavg / 3;
+        console.log(`반 평균: ${Math.round(totalavg*10)/10}`);
+    </script>
+</body>
+
+</html>
