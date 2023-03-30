@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //undefined, null, 0, NaN, ''(빈 문자열)은 모두 false.
+        //나머지는 모두 true로 인식.
+
+        //함수의 리턴, 비동기 통신의 결과값들이 정확하게 어떤 값인지 모르더라도
+        //해당 값이 띠고 있는 논리적 평가에 따라 조건문을 좀 더 수월하게 구성할 수 있다.
+
+        if('') console.log('OK1'); //false
+        if('hello') console.log('OK2');
+        if(undefined) console.log('OK3'); //false
+        if(null) console.log('OK4'); //false
+        if(305) console.log('OK5');
+        if(NaN) console.log('OK6'); //false
+        if(0) console.log('OK7'); //false
+        if([1,2,3]) console.log('OK8');
+    </script>
+    
+</body>
+</html>

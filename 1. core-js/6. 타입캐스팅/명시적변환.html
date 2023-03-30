@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //문자열이 아닌 값을 문자열로 변환하는 방법.
+        var a = 10, b = 20;
+        var result = a + String(b);
+        result = a.toString() + b.toString();
+
+        console.log(result);
+
+        //숫자가 아닌 값을 숫자 타입으로 변환하는 방법
+        var m = '10', n ='3.14';
+        result = Number(m) + Number(n);
+        result = parseInt(m) + parseFloat(n);
+
+        console.log(result);
+
+        //논리 타입이 아닌 값을 논리타입으로 변환하는 법.
+        var t ='Hello', f ='';
+        console.log(Boolean(t));
+        console.log(Boolean(f));
+
+        console.log(!!'hello');
+    </script>
+    
+</body>
+</html>
