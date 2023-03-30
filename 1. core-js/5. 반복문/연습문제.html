@@ -12,6 +12,8 @@
         // Math.random(): 0.0이상 1.0미만의 랜덤값.
         // Math.floor(): 내림, Math.ceil(): 올림, Math.round();
 
+        var correct=0;
+        var wrong=0;
         while (true) {
             var rn1 = Math.floor((Math.random() * 21) + 1);
             var rn2 = Math.floor((Math.random() * 21) + 1);
@@ -22,12 +24,15 @@
                 var input = prompt(`${rn1}+${rn2}=???`);
                 if(result==input){
                     alert('정답');
+                    correct++;
                 }
                 else if(input==='그만'){
-                    braak;
+                    alert(`정답: ${correct}회   오답: ${wrong}회`)
+                    break;
                 }
                 else{
                     alert('오답');
+                    wrong++;
                 }
             }
             else if(type==2){
@@ -35,12 +40,15 @@
                 var input = prompt(`${rn1}-${rn2}=???`);
                 if(result==input){
                     alert('정답');
+                    correct++;
                 }
                 else if(input==='그만'){
-                    braak;
+                    alert(`정답: ${correct}회   오답: ${wrong}회`)
+                    break;
                 }
                 else{
                     alert('오답');
+                    wrong++;
                 }
             
             }
@@ -49,12 +57,15 @@
                 var input = prompt(`${rn1}x${rn2}=???`);
                 if(result==input){
                     alert('정답');
+                    correct++;
                 }
                 else if(input==='그만'){
-                    braak;
+                    alert(`정답: ${correct}회   오답: ${wrong}회`)
+                    break;
                 }
                 else{
                     alert('오답');
+                    wrong++;
                 }
             }
         }
