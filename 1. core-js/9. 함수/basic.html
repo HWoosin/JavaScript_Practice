@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //함수 선언
+        //함수 이름은 동사적 기능이 내포되게 짓는다.
+        function calctotal(x){
+            console.log('함수가 호출됨!');
+            var total =0;
+            for(var n=1; n<=x; n++){
+                total +=n;
+            }
+            return total;
+        }
+        function add(n1, n2){
+            return n1 + n2;
+        }
+
+
+        //함수를 리터럴 방식으로 선언.
+        var add2 = function(n1, n2){
+            return n1 + n2;
+        }
+        //화살표 함수 (ES6)
+        //함수 내부 코드가 단 한 줄이라면 {} return 생략 가능.
+        var add3 = (n1 ,n2) => n1+n2;
+        // var add3 = (n1, n2) => {
+        //     return n1 + n2;
+        // }
+
+
+        //함수의 호출
+        console.log(calctotal(10));
+
+        var result = calctotal(50);
+        console.log(result);
+
+        console.log(add(10, 20));
+        console.log(add2(10, 20));
+        console.log(add(10, 20));
+
+        //함수를 변수에 할당할 수 있습니다.
+        var ct = calctotal;
+        var result2 = ct(200);
+        console.log('result2: ' + result2);
+    </script>
+    
+</body>
+</html>
