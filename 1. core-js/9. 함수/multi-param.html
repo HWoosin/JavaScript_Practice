@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function add2(n1, n2){
+            return n1+n2;
+        }
+        function add3(n1, n2, n3){
+            return n1+n2+n3;
+        }
+
+        //n개의 정수의 합을 구하는 함수
+        //spread: ES6 배열 문법
+        function addAll(...numbers) {
+            console.log(typeof numbers);
+            console.log(numbers);
+            var total = 0;
+            for(var n of numbers){
+                total +=n;
+            }
+            return total;
+        }
+        var result = addAll(10,20,30,40,50,100,1000,10000);
+        console.log(result);
+    </script>
+    
+</body>
+</html>
