@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        객체 생성
+        객체 리터럴 방식을 많이 사용.
+        클래스 없이 0개 이상의 프로퍼티로 구성된 집합 자료 구조
+        프로퍼티는 키와 값을 쌍으로 구성. (자바의 map과 유사)
+        */
+
+        var dog = {
+            name : '누렁이',
+            kind : '똥개',
+            age : 3,
+            favorite : ['훈련','개밥']
+        };
+
+        var cat = {
+            name : '나비',
+            kind : '고등어',
+            age : 2,
+            favorite : ['낮잠','쥐','일광욕']
+        }
+        console.log(typeof dog);
+
+        //객체 프로퍼티 참조
+        console.log(dog.name);
+        console.log(cat.name);
+
+        console.log(dog.age);
+        console.log(cat.favorite[1]);
+
+        dog.favorite.push('옆집개랑 놀기');
+        console.log(dog);
+
+        console.log('-------------------------------------------------------');
+
+        //프로퍼티 참조 다른 방식
+        console.log(dog.kind);
+        console.log(dog['kind']);
+
+        //프로퍼티 값 수정
+        dog.age = 5;
+        dog['age']=6;
+        console.log(dog.age);
+        cat.favorite[1]='땅파기';
+        console.log(cat);
+
+        console.log('-------------------------------------------------------');
+
+        //프로퍼티 동적 추가
+        dog.owner ='야철수';
+        console.log(dog);
+
+        //프로퍼티 삭제
+        delete dog.owner;
+        console.log(dog);
+
+        console.log('-------------------------------------------------------');
+
+        //for ~ in (ES6)
+        for(var key in cat){
+            console.log(`key= ${key} :: value= ${cat[key]}`);
+        }
+        //for ~ of 은 객체에서 사용할 수 없음(반복자가 없기 때문에)
+
+        //객체의 프로퍼티 키의 존재 유무 확인 (in 키워드)
+        console.log(cat.owner);
+        var flag = 'owner' in cat;
+        console.log(flag); //false
+    </script>
+    
+</body>
+</html>
