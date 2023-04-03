@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <li id ="apple">Apple</li>
+        <li id ="banana">Banana</li>
+        <li id ="grape">Grape</li>
+        <li id ="pine">PineApple</li>
+    </ul>
+
+    <script>
+        //관례적으로 노드 변수는 이름 앞에 $ 기호를 붙입니다.
+        const $apple = document.getElementById('apple');
+        console.log($apple.attributes);
+
+        $apple.style.fontSize = '40px';
+        document.body.style.background = 'tomato';
+
+        //없는 아이디로 취득: null이 반환
+        const $item = document.getElementById('banana');
+        console.log($item);
+
+        if($item !== null){
+            $item.style.color ='yellow';//banana로 바꾸면 실행됨
+        }
+
+        //요소에 id를 부여 시 아이디 값으로 자동 전역변수가 생성됨.
+        grape.style.color = 'violet';
+
+    </script>
+    
+</body>
+</html>
