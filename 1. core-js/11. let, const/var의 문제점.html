@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1. 중복선언을 허용.
+        //동일 이름 변수가 선언된 지 모르고 변수를 중복 선언하면
+        //의도치 않게 변수의 값이 변경되는 부작용이 발생할 수 있다.
+        var x = 1;
+        var x = 100;
+        console.log(x);
+
+        /*
+        2. 블록 레벨 스코프를 지원하지 않는다. (함수만 블록으로 인정)
+        var 키워드는 오로지 함수의 영역만을 지역 스코프로 인식.
+        따라서, 함수 외의 블록들에서는 모두 전역변수로 일괄 적용된다.
+        전혀 관련 없는 변수의 값이 사용될 수 있고,
+        전역변수가 남용될 가능성이 있다.
+        */
+        var i = 1;
+        for(var i = 0; i<10; i++){}
+        console.log(i);
+
+        var flag = true;
+        if(flag){
+            var temp ='메롱';
+        }
+        console.log(temp);
+
+        /*
+        3. 변수 호이스팅
+        var 키워드로 변수를 선언하면 호이스팅에 의해
+        변수 선언문이 자동으로 맨 위로 끌어올려진 것처럼 동작한다.
+        흐름 해석에 방해되어 가독성과 유지보수성을 현격하게 떨어뜨린다.
+        */
+        y = 100;
+        console.log('y:'+y);
+
+        var y;
+    </script>
+    
+</body>
+</html>

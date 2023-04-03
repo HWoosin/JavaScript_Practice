@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const x ='메롱';
+        console.log(x);
+        // x = '안메롱'; (x) 값의 변경이 불가능.
+
+        //const와 객체 (객체, 배열, 함수)
+        const person ={
+            name: 'park',
+            age: 20
+        }
+        //객체 프로퍼티의 값을 바꾸는 것은 괜찮다.
+        //객체 주소값이 바뀌는것이 아니기 때문에.
+        person.name ='kim';
+        console.log(person.name);
+
+        //안되는 코드 (객체 자체를 변경하는 행위)
+        person = {
+            name:'lee',
+            age: 30
+        }
+    </script>
+    
+</body>
+</html>
