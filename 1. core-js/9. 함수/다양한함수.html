@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //즉시 실행 함수(정의와 동시에 실행되는 함수)
+        (function(x,y){
+            console.log(`x + y = ${x + y}`);
+        })(60,70);
+
+        //재귀 함수
+        //함수 내에서 자기 자신을 다시 호출하여 작업을 수행하는 함수.
+        //종료 조건을 직접 작성해 주어야 한다.
+        console.log('=========================================');
+        
+        function countdown(n){
+            if(n<0) return;
+            console.log(n);
+            countdown(n-1);
+        }
+        
+        countdown(5);
+
+        console.log('=========================================');
+
+        function factorial(n){
+            if(n<1) return 1;
+            return n*factorial(n-1);
+        }
+        console.log(factorial(6));
+
+        console.log('=========================================');
+
+        function outer(){
+            var x = 1;
+            function inner(){
+                var y = 2;
+                console.log(x+y);
+            }
+            inner(); //outer 함수 내에서만 사용이 가능합니다.
+        }
+        outer();
+    </script>
+    
+</body>
+</html>
