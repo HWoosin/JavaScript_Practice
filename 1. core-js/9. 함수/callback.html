@@ -8,22 +8,26 @@
 </head>
 <body>
     <script>
-        function showEvenNumber(n) {
-            for(var i = 1; i<=n; i++){
-                if(i % 2 ===0){
+        function showNumber(n, callback){
+            for(var i=1; i <=n; i++){
+                if(callback(i)){
                     console.log(i);
                 }
             }
         }
-        showEvenNumber(5);
+        //1부터 10까지의 정수 중 짝수만 걸러서 출력을 해라.
+        showNumber(10, function(n){
+            return n%2===0;
+        });
 
-        function showOddNumber(n) {
-            for(var i = 1; i<=n; i++){
-                if(i % 2 !==0){
-                    console.log(i);
-                }
-            }
-        }
+        // showNumber(10,n => n%2===0);
+
+        console.log('==========================');
+        //1부터 200까지의 정수 중 5의 배수이면서 10의 배수는 아닌것
+        showNumber(200, function(n){
+            return n%5===0 && n%10 !==0;
+        });
+
     </script>
     
 </body>
