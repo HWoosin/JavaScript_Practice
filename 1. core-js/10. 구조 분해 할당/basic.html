@@ -54,8 +54,19 @@
             birthDay : '1998-09-17'
         }
 
-        var {age, empName, hireDate} =emp;
-        console.log(`사원의 이름은 ${empName}이고, 나이는${age}세 이고, 입사일자는 ${hireDate}이다.`);
+        // var {age, empName, hireDate} = emp;
+        // console.log(`사원의 이름은 ${empName}이고, 나이는${age}세 이고, 입사일자는 ${hireDate}이다.`);
+        
+        var{age: a, empName: n, hireDate:h} = emp;
+        console.log(`사원의 이름은 ${n}이고, 나이는${a}세 이고, 입사일자는 ${h}이다.`);
+
+        var {empName, birthDay, ...others} = emp;
+        console.log(empName);
+        console.log(birthDay);
+        console.log(others);
+        
+        //객체 복사
+        var copyEmp = {...emp};
     </script>
     
 </body>
