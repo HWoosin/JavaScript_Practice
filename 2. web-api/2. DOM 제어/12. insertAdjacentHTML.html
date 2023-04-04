@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--beforebegin-->
+    <div>
+        <!--afterbegin-->
+        <p>
+            foo
+        </p>
+        <!--beforeend-->
+    </div>
+    <!--afterend-->
+
+    <script>
+        const $div = document.querySelector('div');
+
+        $div.insertAdjacentHTML('beforebegin', '<p><span>안녕!</span></p>')
+        $div.insertAdjacentHTML('afterbegin', '<p><span>안녕!</span></p>')
+        $div.insertAdjacentHTML('beforeend', '<p><span>안녕!</span></p>')
+        $div.insertAdjacentHTML('afterend', '<p><span>안녕!</span></p>')
+
+    </script>
+    
+</body>
+</html>
