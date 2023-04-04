@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="greeting">Hello<span>World!</span></div>
+
+    <script>
+        const $div = document.getElementById('greeting');
+        console.log($div.childNodes[0].nodeValue);
+        console.log($div.textContent);
+
+        ///textContent는 마크업을 제외한 텍스트 전체를 지목.
+        //텍스트 형식으로 태그를 작성해도 텍스트로 인식.
+        $div.textContent = '안녕하세요~!';
+        $div.innerHTML = '<span>안녕</span>하세요~!';
+    </script>
+</body>
+</html>

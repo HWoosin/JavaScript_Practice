@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id =fruits>
+        <li class ="apple">Apple</li>
+        <li class ="banana">Banana</li>
+        <li class ="grape">Grape</li>
+    </ul>
+
+    <div id="test">
+
+    </div>
+
+    <script>
+        //노드 탐색의 기점이 되는 ul 요소 얻기
+        const $fruits = document.getElementById('fruits');
+
+        //기준 노드의 모든 자식 노드를 탐색.(텍스트 노드 포함)
+        const $childNode = $fruits.childNodes;
+        console.log($childNode); //공백을 텍스트로 인식해서 모두 탐색.
+
+        const $children = $fruits.children;
+        console.log($children);
+
+        //기준 노드의 첫번째 자식 노드를 탐색
+        //firstChild는 텍스트 노드가 나올 가능성있음.
+        const $firstChild = $fruits.firstChild;
+        console.log($firstChild);
+        console.log('firstElementChild'+$fruits.firstElementChild);
+        console.log('lastElementChild'+$fruits.lastElementChild);
+
+        //기준 노드에 자식 노드가 있는지의 여부 확인
+        //텍스트 노드가 있을 시 true가 나올 수 있음
+        const $test = document.getElementById('test');
+        console.log($test.hasChildNodes());
+
+        //테스트 노드를 제외한 요소 노드의 존재여부 확인
+        console.log(!!$test.children.length);
+    </script>
+    
+</body>
+</html>
