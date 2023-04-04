@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruits">
+        <li>apple</li>
+        <li>banana</li>
+        <li>grape</li>
+    </ul>
+
+    <script>
+        const $fruits = document.getElementById('fruits');
+
+        const $li = document.createElement('li')
+        $li.textContent = 'Mango';
+
+        //두 번째 매개값으로 전달된 노드는 반드시
+        //insertBefore를 호출한 자식이어야한다.
+        $fruits.insertBefore($li,$fruits.lastElementChild);
+
+        const $li2 = document.createElement('li')
+        $li2.textContent = 'Orange'
+
+        $fruits.insertBefore($li2,document.querySelector('#fruits> li:nth-child(2)'));
+    </script>
+</body>
+</html>

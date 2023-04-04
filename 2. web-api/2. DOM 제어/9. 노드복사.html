@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="fruits">
+        <li>apple</li>
+    </ul>
+    <script>
+        const $fruits = document.getElementById('fruits');
+        const $apple = $fruits.firstElementChild;
+
+        //apple의 사본생성(얕은복사: 자기 자신 노드만 복사)
+        const $shallowClone =$apple.cloneNode();
+        console.log($shallowClone);
+
+        $shallowClone.textContent = $apple.textContent;
+        $fruits.appendChild($shallowClone);
+
+        //apple의 사본 생성(깊은복사: 자기 자신을 포함한 모든 자손노드를 복제)
+        const $deepClone = $apple.cloneNode(true);
+        $fruits.appendChild($deepClone);
+
+        //ul의 복사-true없으면 li자식들을 못가져옴
+        const $ulClone = $fruits.cloneNode(true);
+        $fruits.appendChild($ulClone);
+    </script>
+</body>
+</html>

@@ -9,18 +9,17 @@
 <body>
     <ul id="fruits">
         <li>Apple</li>
+        <li>Banana</li>
     </ul>
 
     <script>
         const $fruits = document.getElementById('fruits');
-        
-        //1.요소 노드 생성(추가는 따로)
-        const $newli = document.createElement('li');
-        //2. 텍스트 삽입
-        $newli.textContent='Banana';
-        //3. ul에 새로운 li노드 추가
-        $fruits.appendChild($newli)
+        const $mango = document.createElement('li');
+        $mango.textContent = 'Mango';
 
+        $fruits.replaceChild($mango, $fruits.firstElementChild);
+        $fruits.removeChild($fruits.lastElementChild);
     </script>
+    
 </body>
 </html>

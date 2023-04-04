@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 class="the-title">html 조작</h2>
+    <ul id="list">
+        <li class="obj1">list_2</li>
+        <li>list_3</li>
+        <li>list_4</li>
+        <li>list_5</li>
+    </ul>
+    <script>
+        //1. class="the-title"인 요소의 자식요소를
+        //innerHTML을 사용하여 "<a href="#">요소 객체 조작</a>"로 교체.
+        const $title = document.querySelector('.the-title');
+        $title.innerHTML = '<a href="#">요소 객체 조작</a>';
+
+        //2. class="obj1"인 요소의 텍스트를 "리스트_2"로 변경하세요.
+        const $obj1 = document.querySelector('.obj1');
+        $obj1.textContent = '리스트_2';
+
+        //3. id="list"인 요소의 마지막 위치에 새 요소 <li>list_6</li>
+        //를 추가하세요.
+        const $list = document.getElementById('list');
+        const $li = document.createElement('li')
+        $li.textContent = 'list_6';
+        $list.appendChild($li);
+
+        //4. id="list"인 요소의 첫 위치에 새 요소 "<li>list_1</li>"
+        //을 추가하세요.
+        const $li2 = document.createElement('li')
+        $li2.textContent = 'list_1';
+        $list.insertBefore($li2,$list.firstElementChild);
+
+        //5. class="obj1"인 요소를 깊은 복제 후에
+        //id="list"인 요소 마지막에 추가.
+        const $copy = $obj1.cloneNode(true);
+        $list.appendChild($copy);
+
+        //6. id="list"인 요소의 하위 li 요소 중 첫번째 요소 삭제
+        $list.removeChild($list.firstElementChild);
+
+        //7. id="list"인 요소의 전체 자식 요소 삭제
+        const $children = $list.children;
+        for(let $li of [...$children]){
+            $list.removeChild($li);
+        }
+        // [...$children].forEach($li => $list.removeChild($li));
+
+    </script>
+</body>
+
+</html>
