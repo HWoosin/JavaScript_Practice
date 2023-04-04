@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>리스트1</li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+        <li>리스트4</li>
+        <li>리스트5</li>
+        <li>리스트6</li>
+        <li>리스트7</li>
+    </ul>
+    <script>
+        //1. id = "list"인 요소에 <li> 요소 중 
+        //홀수번째 요소만 선택 후 배경색상 yellow 적용.
+        const $ele1 = document.querySelectorAll('#list li:nth-child(odd)');
+        for(const $e of $ele1){
+            $e.style.background ='yellow';
+        }
+        //2. id="list"인 요소에 <li> 요소중 짝수번째 요소만
+        //선택 후 배경색상 gray 적용.
+
+        const $ele2 = document.querySelectorAll('#list li:nth-child(even)');
+        // for(const $e of $ele2){
+        //     $e.style.background ='gray';
+        // }
+        //forEach 함수는 배열, 노드리스트 가능, HTMLCollection 불가.
+        //배열로 변경해서 사용하는것을 권장.
+        [...$ele2].forEach($li => $li.style.background ='gray');
+
+        //3. id="list"인 요소에 <li> 요소중 첫번째 li 요소만
+        //선택 후 폰트 색상 red 적용.
+        const $ele3 = document.querySelector('#list li:first-child');
+        $ele3.style.color ='red';
+
+        //4. id="list"인 요소에 <li> 요소중 마지막 li 요소만
+        //선택 후 폰트 색상 green 적용.
+        const $ele4 = document.querySelector('#list li:last-child');
+        $ele4.style.color ='green';
+
+        //5. id="list"인 요소에 <li> 요소 중 두번째 li요소만
+        //선택 후 이탤릭체 적용.
+        const $ele5 = document.querySelector('#list li:nth-child(2)');
+        $ele5.style.fontStyle ='italic';
+
+        //6. id="list"인 요소에 <li> 요소 중 3번째 이전 요소만
+        //경계선을 2px dotted aqua 적용. (1, 2번째만 선택)
+        const $ele6 = document.querySelectorAll('#list li');
+        for(let i = 0; i < 2; i++){
+            $ele6[i].style.border='2px dotted aqua'
+        }
+
+        //7. id="list"인 요소에 <li> 요소 중 3번째 이후 요소만
+        //경계선을 2px dashed violet 적용 (3번째부터 끝까지 선택)
+        const $ele7 = document.querySelectorAll('#list li');
+        for(let i = 3; i < $ele7.length; i++){
+            $ele7[i].style.border='2px dashed violet'
+        }
+    </script>
+</body>
+
+</html>

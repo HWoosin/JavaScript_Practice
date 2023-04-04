@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul > li{
+            font-size:30px;
+        }
+        .fruit{
+            color :red;
+        }
+    </style>
+</head>
+<body>
+    <ul id = "fruits">
+        <li class ="fruit ">Apple</li>
+        <li class ="fruit ">Banana</li>
+        <li class ="fruit ">Grape</li>
+        <li class ="fruit ">PineApple</li>
+    </ul>
+
+    <script>
+        
+        //유사배열 NodeList 리턴
+        // const $elements = document.querySelectorAll('.fruit');
+
+        //유사배열 HTMLCollection 리턴
+        const $elements = document.getElementsByClassName('fruit');
+
+        //배열이 아니에요!
+        // let $ele = $elements.pop();
+
+        //유사배열 객체를 배열처럼 제어할 때는 순수 배열로 변경할 수 있습니다.
+        // const realArray = Array.from($elements);
+        const realArray = [...$elements]; //ES6
+
+        let $ele = realArray.pop();
+        console.log($ele);
+        console.log(realArray);
+
+        for(let $e of [...$elements]) {
+            $e.style.fontStyle = 'italic';
+        }
+
+
+    </script>
+</body>
+</html>
