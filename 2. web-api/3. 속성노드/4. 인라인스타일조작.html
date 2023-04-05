@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="h" style="color: red; font-size: 3rem;">Hello</div>
+    <script>
+
+        //style 프로퍼티로 지정한 스타일은 인라인으로 적용된다.
+        //웬만한 css문법보다 더 우선시 된다. (선택자로 지정된 스타일)
+        //케밥 케이스(하이픈)로 적용된 css속성을 카멜케이스로 접근하면 된다.
+        const $h = document.getElementById('h');
+        $h.style.color = 'orange';
+        $h.style.background = 'orangered';
+        $h.style.fontSize='50px';
+
+    </script>
+    
+</body>
+</html>

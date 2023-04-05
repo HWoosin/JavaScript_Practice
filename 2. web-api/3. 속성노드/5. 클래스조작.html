@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: lightgray;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 100px;
+        }
+        .red{
+            color:red;
+        }
+        .blue{
+            color:blue;
+        }
+        .circle{
+            border-radius: 50%;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="box red">Hello</div>
+
+    <script>
+        const $box = document.querySelector('.box');
+
+        console.log($box.attributes.class.value);
+        console.log($box.getAttribute('class'));
+        console.log($box.className);
+
+        // $box.setAttribute('class', 'box blue');
+        // $box.className = 'box blue';
+        
+        //클래스를 조작할 때는 classList 프로퍼티를 사용하는게 좋다.
+        console.log($box.classList);
+
+        //요소에 클래스를 추가
+        $box.classList.add('circle');
+        $box.classList.add('abc','def','ghi');//여러개 추가가능
+
+        //요소에 특정 클래스를 교체
+        $box.classList.replace('red','blue');
+
+        //요소에 특정 클래스를 삭제
+        $box.classList.remove('circle');
+        $box.classList.remove('abc','def','ghi');//여러개 삭제가능
+
+        //요소에 특정 클래스가 존재하는지 확인
+        console.log($box.classList.contains('box'));
+        console.log($box.classList.contains('red'));
+
+        //toggle():해당 클래스가 존재하면 삭제, 존재하지 않으면 추가
+        $box.classList.toggle('circle');
+        $box.classList.toggle('circle');
+    </script>
+
+    
+</body>
+</html>
