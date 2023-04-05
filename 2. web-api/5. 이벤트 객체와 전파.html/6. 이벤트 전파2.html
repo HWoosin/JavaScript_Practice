@@ -33,6 +33,12 @@
 
     <div>선택된 과일: <em class="msg">apple</em></div>
 
+    <br>
+
+    # 새로운 과일 추가:
+    <input type="text" class="text-box">
+    <button id ="add">추가</button>
+
     <script>
 
         const $fruits = document.getElementById('fruits');
@@ -51,6 +57,10 @@
             //기존에 active를 가지고 있던 요소에 클래스를 삭제.
 
             for(let $li of $liList){
+                /*
+                toggle 메서드의 두번째 매개값으로 논리값을 전달할 수 있는데,
+                해당 논리값이 true로 판명나면
+                지정한 클래스를 추가하고, false로 판명나면 지정한 클래스를 삭제 */
                 $li.classList.toggle('active',$li === e.target);
             }
 
@@ -61,6 +71,30 @@
 
         //ul에 이벤트 등록
         $fruits.addEventListener('click',activate);
+        
+        //동적으로 과일 추가
+        const $btn = document.getElementById('add');
+        const $textBox = document.querySelector('.text-box');
+
+        $btn.addEventListener('click', e=>{
+            const $newLi = document.createElement('li');//li만들기
+            $newLi.textContent = $textBox.value;
+            $newLi.setAttribute('id',$textBox.value.toLowerCase());
+            // console.log($textBox.value)
+            $fruits.appendChild($newLi);
+            $textBox.value='';
+            //새롭게 추가된 li에도 active추가 대상 여부를 확인하기 위해 배열에 추가.
+            $liList.push($newLi)
+        })
+
+        //입력창 안에서 엔터키를 입력하면 버튼 클릭과 동일한 효과 내기
+        $textBox.addEventListener('keydown', function(e){
+            if(e.key ==='Enter'){
+                //Click()은 요소를 직접 클릭한 것과 같은 효과를 줌.
+                //클릭 이벤트가 발생할 수 있도록 유도.
+                $btn.click();
+            }
+        });
         
     </script>
 </body>

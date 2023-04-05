@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .root{
+            width: 500px;
+            height: 500px;
+            background: red;
+        }
+        .parent{
+            width: 50%;;
+            height: 50%;
+            background: orange;
+        }
+        .child{
+            width: 50%;
+            height: 50%;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.naver.com">네이버로 이동</a>
+    
+    <br>
+
+    <div class="root">
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.root').addEventListener('click', e =>{
+            alert('root');
+        });
+        document.querySelector('.parent').addEventListener('click', e =>{
+            alert('parent');
+            e.stopPropagation();//이벤트 전파를 막는 메서드
+        });
+        document.querySelector('.child').addEventListener('click', e =>{
+            alert('child');
+            e.stopPropagation();
+        });
+
+        const $link = document.querySelector('a');
+        $link.addEventListener('click', e => {
+            if(!confirm('정말 이동하시겠습니까?')){
+                //return; -> a의 고유기능을 막을 수 없다.
+                e.preventDefault(); //태그의 고유기능을 막음.
+            }
+        });
+    </script>
+    
+</body>
+</html>
