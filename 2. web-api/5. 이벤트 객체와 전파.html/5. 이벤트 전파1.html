@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #fruits{
+            padding:50px;
+            border: 2px solid red;
+        }
+
+        #fruits >li{
+            background: yellow;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <ul id="fruits">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Grape</li>
+    </ul>
+    
+    <script>
+        const $fruits = document.getElementById('fruits');
+        $fruits.addEventListener('click',e=>{
+            // console.log('ul에 클릭 이벤트 발생!');
+            // console.log('이벤트 핸들러가 붙은 타겟: '+ e.currentTarget);
+            // console.log('실제 이벤트가 발생한 요소: '+ e.target);
+            if(e.currentTarget === e.target){
+                return;
+            }
+            alert('요소가 클릭됨!');
+        })
+    </script>
+    
+</body>
+</html>

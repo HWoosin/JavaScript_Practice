@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #fruits{
+            list-style: none;
+            padding: 0;
+        }
+        #fruits >li{
+            width: 100px;
+            cursor: pointer;
+        }
+        
+        #fruits .active{
+            color:red;
+            text-decoration: underline; 
+        }
+
+    </style>
+</head>
+<body>
+    <ul id="fruits">
+        <li id="apple" class="active">Apple</li>
+        <li id="banana">Banana</li>
+        <li id="grape">Grape</li>
+    </ul>
+
+    <div>선택된 과일: <em class="msg">apple</em></div>
+
+    <script>
+
+        const $fruits = document.getElementById('fruits');
+        const $msg = document.querySelector('.msg');
+        const $liList = [...$fruits.children];
+
+        //이벤트 핸들러 함수
+        function activate(e){
+
+            //이벤트 발생 타겟이 특정 요소인지를 검증.
+            if(!e.target.matches('#fruits > li')){
+                // console.log('이벤트발생 X');
+                return;
+            }
+            //active클래스를 클릭된 요소에 추가하고
+            //기존에 active를 가지고 있던 요소에 클래스를 삭제.
+
+            for(let $li of $liList){
+                $li.classList.toggle('active',$li === e.target);
+            }
+
+            //메세지 영역에 이벤트가 발생된 과일 이름을 추가
+            console.log(e);
+            $msg.textContent = e.target.textContent;
+        }
+
+        //ul에 이벤트 등록
+        $fruits.addEventListener('click',activate);
+        
+    </script>
+</body>
+</html>
