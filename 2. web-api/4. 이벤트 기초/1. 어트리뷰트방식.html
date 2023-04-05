@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button type=" button" id="btn" onclick="greetings()">클릭하슈</button>
+    <button type=" button" id="btn2" onmouseenter="greetings()">마우스올려</button>
+    <button type=" button" id="btn3" onmouseleave="greetings()">마우스치워</button>
+
+    <script>
+
+        //이벤트 핸들러(브라우저에게 전해줄 콜백함수)정의.
+        function greetings(){
+            alert('하이');
+        }
+
+    </script>
+    
+</body>
+</html>
