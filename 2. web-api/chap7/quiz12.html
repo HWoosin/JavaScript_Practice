@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .toggle li {
+            display: inline-block;
+            padding: 15px 20px 14px;
+            width: 25%;
+            text-align: center;
+            border: 1px solid #333;
+            cursor: pointer;
+        }
+        .toggle-menu {
+            display: none;
+        }
+        .active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            } to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <ul class="toggle">
+        <li data-id="#toggle1">메뉴1</li>
+        <li data-id="#toggle2">메뉴2</li>
+        <li data-id="#toggle3">메뉴3</li>
+    </ul>
+
+    <div>
+        <div class="toggle-menu active" id="toggle1">
+            토글메뉴 1
+        </div>
+        <div class="toggle-menu" id="toggle2">
+            토글메뉴 2
+        </div>
+        <div class="toggle-menu" id="toggle3">
+            토글메뉴 3
+        </div>
+    </div>
+
+    <script>
+
+        /*
+
+	메뉴를 클릭할 때마다 해당 토글 메뉴가 뜨면 됩니다.
+
+        1. ul에 이벤트 전파 이용해서 클릭이벤트를 걸고
+         클릭되는 타겟의 data-id를 얻습니다.
+        2. toggle-menu의 active속성을 삭제
+        3. data-id 값에 알맞는 태그에 active속성 추가.
+        */
+        const $ul =document.querySelector('.toggle');
+        const $allTog = document.querySelectorAll('.toggle-menu');
+        const $tog = [...$allTog];//토글메뉴들을 배열로 만들어버리자.
+        
+        $ul.addEventListener('click', e=>{
+            const $active = e.target.dataset.id;
+            // console.log($active);
+            for(const $t of $tog){
+                $t.classList.toggle('active',$t.matches($active));
+                console.log($t);
+            }
+        })
+
+    </script>
+    
+</body>
+</html>

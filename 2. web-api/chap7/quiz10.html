@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul li {
+            display: inline-block;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h3>다중 이벤트 처리</h3>
+    <div>
+        <ul>
+            <li><img src="../6. quiz/img/1.jpg" alt="1" width="100px"></li>
+            <li><img src="../6. quiz/img/2.jpg" alt="2" width="100px"></li>
+            <li><img src="../6. quiz/img/3.jpg" alt="3" width="100px"></li>
+            <li><img src="../6. quiz/img/4.jpg" alt="4" width="100px"></li>
+        </ul>
+        결과:
+        <div class="result">
+            <img src="../6. quiz/img/1.jpg" alt="결과" width="300px">
+        </div>
+    </div>
+
+    <script>
+	
+	/*
+	사진을 클릭할 때마다 결과 화면이 그 사진으로 바뀌면 됩니다. 
+	*/
+    const $img = document.getElementsByTagName('img');
+
+    const $result = document.querySelector('.result > img');
+    console.log($img)
+    console.log($result)
+    
+    for(const $i of [...$img]){
+        $i.addEventListener('click', ()=>{
+            $result.src=$i.src
+        })
+    }
+
+    </script>
+    
+</body>
+</html>
