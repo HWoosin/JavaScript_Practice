@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        thead th {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <th>교시</th>
+            <th>훈련과목</th>
+            <th>담당자</th>
+            <th>훈련내용</th>
+        </thead>
+        <tbody class="todoList">
+            <tr class="list">
+                <td><input type="text" size="3"></td>
+                <td><input type="text"></td>
+                <td><input type="text" size="3"></td>
+                <td><input type="text"></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <button id="add5">5행 추가하기</button>
+    <button id="add1">1행 추가하기</button>
+
+    <script>
+        const $todo = document.querySelector('.todoList');
+        const $add1 = document.querySelector('#add1');
+        const $add5 = document.querySelector('#add5');
+        const $list = $todo.firstElementChild;
+
+        $add1.addEventListener('click', () => {
+            const $clone = $list.cloneNode(true);
+            $todo.appendChild($clone);
+            
+            [...$clone.querySelectorAll('td>input')].forEach($input =>{//input을 불러온걸 배열화
+                $input.value='';
+            })
+            
+        });
+        $add5.addEventListener('click', () => {
+            for (let i = 0; i < 5; i++) {
+                const $clone = $list.cloneNode(true);
+                $todo.appendChild($clone);
+                [...$clone.querySelectorAll('td>input')].forEach($input =>{
+                $input.value='';
+            })
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>할 일 목록 만들기</h2>
+
+    <div class="name-form">
+        <h3 class="name-title"></h3>
+        <input type="text" placeholder="이름을 입력하세요" class="name-input">
+        <button class="btn1">확인</button>
+    </div>
+
+    <div class="todo-form">
+        <input type="text" placeholder="당신의 할 일을 적으세요." class="todo-input">
+        <button class="btn2">확인</button>
+    </div>
+
+    <ul class="todo-list">
+
+    </ul>
+
+    <script>
+        /*
+        1. 입력받은 이름값을 h3에 띄워주세요.
+        이름이 입력되었다면 이름 입력창을 숨겨주세요.
+d
+        2. 할일을 입력받아서 li요소로 추가해 주세요.
+        그 후 입력창은 비워주세요.
+        
+        3. 할일이 추가되면 X버튼이 같이 생성됩니다.
+        X버튼을 클릭했다면 해당 할 일을 지워주세요.
+        (X버튼 누를 시 이벤트 발생 -> X버튼을 품고 있는 부모 노드를 삭제)
+        */
+
+        const $name = document.querySelector('.name-input');
+        const $h3 = document.querySelector('.name-title');
+        const $btn1 = document.querySelector('.btn1');
+        // console.log($name)
+
+        //이름추가
+        $btn1.addEventListener('click', () => {
+            if (!$name.value) {
+                alert('이름을 입력해주세요!');
+            } else {
+
+                $h3.textContent = $name.value + '님 안녕하세요!';
+                $name.style.display = 'none';
+                $btn1.style.display = 'none';
+            }
+        })
+
+        const $todo = document.querySelector('.todo-input');
+        const $todoList = document.querySelector('.todo-list');
+        const $btn2 = document.querySelector('.btn2');
+
+        //할일 추가
+        $btn2.addEventListener('click', () => {
+            if (!$todo.value) {
+                alert('할일을 입력하세요')
+
+            } 
+            else {
+                const $li = document.createElement('li'); //내부li
+                $li.textContent = $todo.value;
+                $todoList.appendChild($li);
+
+                const $inbtn = document.createElement('button'); //내부버튼
+                $inbtn.textContent = 'x';
+                $li.appendChild($inbtn)
+                $todo.value='';//썻으면 지워주기
+
+                $inbtn.addEventListener('click', () => {
+                    $li.remove();
+                })
+            }
+
+        })
+    </script>
+</body>
+
+</html>
