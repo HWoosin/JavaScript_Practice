@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .menu ul{
+            display: none;
+            list-style: none;
+            border: 1px solid orange;
+            width: 100px;
+            margin: 0;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .menu .title{
+            cursor: pointer;
+        }
+
+        .menu .title::before{
+            content: '▶';
+            color: green;
+        }
+
+        .show ul{
+            display: block;
+        }
+        .show .title::before{
+            content: '▼';
+            color: green;
+        }
+
+        .menu .title:hover{
+            text-decoration: underline green;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="lunches" class="menu">
+        <span class ="title">추천 점심 메뉴 (click me!)</span>
+        <ul>
+            <li>짜장면</li>
+            <li>돈까스</li>
+            <li>김치찌개</li>
+            <li>제육덮밥</li>
+        </ul>
+    </div>
+
+    <script>
+         /*
+        CSS와 JS를 적절히 사용하여 처음에는 ul이 보이지 않다가
+        추천 점심 메뉴를 클릭하면 나타나도록 이벤트를 구현하세요.
+        ::before를 이용하여 화살표 방향을 지정했습니다.
+        */
+       const $menu = document.querySelector('.menu');
+       const $title = document.querySelector('.title');
+
+       $title.addEventListener('click', function(){
+        $menu.classList.toggle('show');
+       })
+    </script>
+</body>
+</html>
