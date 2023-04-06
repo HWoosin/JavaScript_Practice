@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <button id="hider">텍스트 숨기기!</button>
+    <div id="text">안녕하게요!</div>
+    
+
+    <script>
+         /*
+        1. 버튼을 클릭하면 div 태그가 숨겨지도록
+         이벤트 핸들러를 구현하세요.
+
+        2. 다시 버튼을 클릭하면 텍스트가 나오도록
+         구현하세요.
+
+        3. 텍스트가 숨겨지면 버튼의 텍스트를
+        '텍스트 보이기!' 로 변경하세요.
+        그리고 텍스트가 다시 나타나면
+        '텍스트 숨기기!' 로 변경하세요.
+        힌트: display: none; (CSS)
+        클래스 이름을 변경해서 style 태그에 display를 지정.
+        */
+        const $btn = document.querySelector('#hider');
+        const $text = document.querySelector('#text');
+
+        $btn.addEventListener('click',function(e){
+            //또는 classList.contains(hide)
+            if(e.target.textContent=='텍스트 숨기기!'){
+                $btn.textContent='텍스트 보이기!'
+            }
+            else{
+                $btn.textContent='텍스트 숨기기!'
+            }
+            $text.classList.toggle('text-hide')
+
+        })
+
+    </script>
+</body>
+</html>

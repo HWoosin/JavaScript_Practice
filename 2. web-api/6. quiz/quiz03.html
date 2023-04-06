@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!--
+        사용자가 선택한 인삿말의 언어에 따라
+        메세지창에 어느나라 언어인지를 띄워주시면 되겠습니다.
+        (change -> 요소의 value가 무엇인지를 판단했습니다.)
+    -->
+
+    <h2>단어를 선택하세요</h2>
+    <p class="msg"></p>
+
+    <hr>
+    
+    <select id="selector">
+        <option value="선택">선택</option>
+        <option value="영어">Hello</option>
+        <option value="한국어">안녕</option>
+        <option value="쭝궈">니취팔ㄹ러마</option>
+    </select>
+
+
+    <script>
+        const $msg = document.querySelector('.msg');
+        const $sel = document.getElementById('selector');
+
+        $sel.addEventListener('change', e =>{
+            console.log(e.target.value)
+            $msg.textContent = e.target.value
+
+            if(e.target.value ==='선택'){
+                $msg.textContent=''
+            }
+        })
+
+    </script>
+
+</body>
+</html>
