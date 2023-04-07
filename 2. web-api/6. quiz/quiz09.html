@@ -116,7 +116,7 @@
             const $btn3 = document.querySelector('#btn3');
             const $inner2 = document.querySelector('.left .inner');
             const $img = document.querySelector('img');
-            const $textbox = document.createElement('input')
+            const $textbox = document.createElement('textarea')
             const $inbtn = document.createElement('button')
 
             //배경변경
@@ -161,9 +161,7 @@
                     $inner2.classList.toggle('textBox');
                     $inner2.removeChild($img)
 
-                    $textbox.classList.add('inner')
-                    $textbox.style.width='99%';
-                    $textbox.style.height='90%';
+                    $textbox.classList.add('memo')
 
                     $inbtn.textContent = '등록하기'
                     $inner2.appendChild($textbox);
