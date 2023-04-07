@@ -8,10 +8,18 @@
 </head>
 <body>
 
+    <h3>5초 뒤에 함수가 하나 실행되는데, 이 버튼을 누르면 실행되지 않는다.</h3>
+
+    <button class ='stop-time'>취소!</button>
+
     <script>
         const func = setTimeout(()=>{
             alert('5초 후 경고창 출력!');
         },5000);
+
+        document.querySelector('.stop-time').onclick = function(){
+            clearTimeout(func);
+        }
     </script>
     
 </body>

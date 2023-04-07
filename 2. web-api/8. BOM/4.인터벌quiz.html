@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-banner1 {
+            background: linear-gradient(90deg, #0c151c 1.3125rem, transparent 1%) 50%, linear-gradient(#0c151c 1.3125rem, transparent 1%) 50%, #263747;
+            background-size: 1.5rem 1.5rem;
+            padding: 6rem 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .main-banner1 img {
+            display: none;
+            position: relative;
+            animation: topIn .5s linear;
+        }
+
+        @keyframes topIn {
+            from {
+                top: -50px;
+                opacity: 0;
+            }
+
+            to {
+                top: 0px;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-banner1">
+        <img src="../6. quiz/img/1.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/2.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/3.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/4.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/1.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/2.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/3.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/4.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/1.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/2.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/3.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/4.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/1.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/2.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/3.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/4.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/1.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/2.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/3.jpg" alt="pic" width="200px">
+        <img src="../6. quiz/img/4.jpg" alt="pic" width="200px">
+    </div>
+
+    <script>
+        /*
+        사진을 한장씩 반복해서 띄워 주시는데, 0.3초 간격으로 띄워 주시면 됩니다.
+        사진을 띄우는 방법은 display 속성을 inline으로 변경해 주시면 됩니다.
+        사진을 20장 다 띄우셨으면 인터벌 함수를 종료해 주시고,
+        새로고침이 10초마다 반복되도록 설정해 보세요.
+        새로고침 명령 -> location.reload();
+        */
+        const $img = document.querySelectorAll('img');
+        const $i = [...$img];
+        let i=0;
+        const showPic = setInterval(() => {
+            $i[i].style.display='inline';
+            i++;
+            if(i===20){clearInterval(showPic);}
+        }, 300);
+        
+
+        const clear = setInterval(()=>{
+            location.reload();
+        },10000)
+
+        
+    </script>
+</body>
+
+</html>

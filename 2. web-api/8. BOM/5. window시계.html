@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            animation: fadeIn .5s linear;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .clock h1 {
+            color: white;
+            font-size: 5em;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="clock">
+        <h1>00:00:00</h1>
+    </div>
+
+    <script>
+        const $time = document.querySelector('h1');
+
+        function createTime() {
+            //Date객체 이용하여 날짜 정보를 얻어오고
+            //화면에 보여질 시계 형식에 맞게 값을 얻어서
+            //텍스트 형식으로 표현
+            let date = new Date();
+            let hour = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+
+            if(min<10){
+                min=`0${min}`;
+            }
+            if(sec<10){
+                sec=`0${sec}`;
+            }
+
+            $time.innerHTML = `${hour}:${min}:${sec}`
+
+        }
+        const $div = document.querySelector('div');
+        let i = 0;
+        const fileName = [1, 2, 3, 4];
+        function changeBackGround() {
+            //img 요소 생성해서
+            //봄 여름 가을 겨울 이미지를 순서대로 넣어주면 된다.
+            //changeBackGround 함수는 나중에 인터벌 함수에 10초마다 한번씩
+            //반복되도록 설정되기 때문에, 순서대로 표현될 수있도록 처리.
+            
+            const $img = document.createElement('img');//요소를 만들어서
+            $img.classList.add('bg-img');
+            $img.setAttribute('src', `../6. quiz/img/${fileName[i]}.jpg`);//소스를 주고
+            i++;
+            // console.log($img)
+            document.body.appendChild($img);//그걸 바디에 요소로 넣어준다
+            if(i==4){
+                i=0;
+            }
+        }
+
+        (function () {
+            createTime();
+            setInterval(createTime, 1000);
+            changeBackGround();
+            setInterval(changeBackGround, 50000);
+        })();
+    </script>
+</body>
+
+</html>
