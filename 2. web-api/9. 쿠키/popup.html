@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./popup.js"></script>
+    
+</head>
+<body>
+    <div>
+        <img src="../6. quiz/img/1.jpg" alt="pic" width="300px"> <br>
+        앗 타이어 봄보다 싸다!
+    </div>
+
+    오늘 하루 이 창 열지 않기 <input type="checkbox">
+
+    <script>
+        const $box = document.querySelector('input[type="checkbox"]');
+        $box.onclick = function(){
+            if($box.checked){
+                createCookie('popup'); //쿠키 생성함수 호출!
+                window.close(); //창닫기.
+            }
+        }
+    </script>
+    
+</body>
+</html>

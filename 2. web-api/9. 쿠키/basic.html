@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    쿠키 이름: <input type="text" id="cookieName"> <br>
+    쿠키 값: <input type="text" id="cookieValue"> <br>
+    <button id ="make">쿠키 생성!</button>
+
+    <hr>
+    찾을 쿠키이름: <input type="text" id = "cookieFind">
+    <button id ="get">쿠키 찾기!</button>
+
+    <script>
+
+        const $make = document.getElementById('make');
+        $make.addEventListener('click', createCookie);
+        function createCookie(){
+            const name = document.getElementById('cookieName').value;
+            const value = document.getElementById('cookieValue').value;
+
+            //쿠키의 유효시간 설정.
+            const date = new Date();
+            date.setDate(date.getDate() + 7); //현재 시간으로 부터 7일 뒤로 세팅.
+
+            //쿠키에 저장할 문자열을 생성. (형식 반드시 지켜줄것)
+            let cookie ='';
+            cookie += name + '=' + value + ';'; //키 = 값; 설정.
+            cookie +='expires=' + date.toUTCString(); //쿠키의 유효시간 설정.
+
+            //쿠키에 적용
+            document.cookie = cookie;
+            // console.log(document.cookie)
+        }
+
+        //쿠키확인하기
+
+        document.getElementById('get').addEventListener('click',getCookie);
+
+        function getCookie(){
+            const find = document.getElementById('cookieFind').value; //찾을 쿠키이름
+            // console.log(document.cookie);//쿠키확인
+            const cookies = document.cookie.split(';');
+            console.log(cookies);
+            
+            let flag = false;
+            for(let c of cookies){
+                if(c.search(find) !== -1){//전달한 값을 찾으면 위치 반환, 없다면 -1반환
+                    console.log(c.replace(find + '=', '')); //쿠키의 이름을 지우기 위해 빈 문자열로 대체
+                    flag = true;
+                    break;
+                }
+            }
+            if(!flag){
+                console.log('쿠키를 찾지 못했습니다.')
+            }
+        }
+    </script>
+</body>
+</html>
